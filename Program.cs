@@ -1,12 +1,22 @@
-﻿
+﻿namespace ConsoleApp1;
 
-Console.WriteLine("Enter a number: ");
-var num = Console.ReadLine();
-Console.WriteLine("The number you entered is " + num);
-
-Console.WriteLine("Enter another number: ");
-var num2 = Console.ReadLine();
-Console.WriteLine("The number you entered is " + num2); 
-
-var add = num + num2;
-Console.WriteLine("addition: " + add);
+internal static class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Welcome to the Math Calculator, what type of math do you want to do today? (use simple for normal equations): ");
+        var input = Console.ReadLine();
+        switch (input)
+        {
+            case "simple":
+                var simple = new SimpleMath();
+                break;
+            case "algebra":
+                var algebra = new Algebra();
+                break;
+            case "physics":
+                var physics = new Physics();
+                break;
+        }
+    }
+}
